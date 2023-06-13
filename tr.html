@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Travel Planner</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="travel.js"></script>
+</head>
+<body>
+ <header>
+  <h1>Travel Planner</h1>
+  <nav>
+   <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Itineraries</a></li>
+    <li><a href="#">Bookings</a></li>
+    <li><a href="#">Reviews</a></li>
+   </ul>
+  </nav>
+ </header>
+ 
+ <main>
+  <section class="register">
+   <h2>Create an account</h2>
+   <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label> 
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Create account</button>
+   </form>
+  </section>
+  
+  <section class="search">
+   <h2>Search itineraries</h2>
+   <form>
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="destination">
+    <label for="start_date">Start date:</label>
+    <input type="date" id="start_date" name="start_date">
+    <label for="end_date">End date:</label>
+    <input type="date" id="end_date" name="end_date">
+    <button type="submit">Search</button>
+   </form>
+  </section>
+ </main>
+ 
+ <footer>
+  <p>&copy; 2023 Travel Planner</p>
+ </footer>
+</body>
+</html>

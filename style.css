@@ -1,0 +1,93 @@
+/* Global styles */
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+   }
+   
+   h1, h2, h3 {
+    font-weight: normal;
+    margin-top: 0;
+   }
+   
+   header {
+    background-color: #005e6b;
+    color: #fff;
+    padding: 20px;
+   }
+   
+   nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   }
+   
+   nav li {
+    display: inline-block;
+    margin-right: 20px;
+   }
+   
+   nav a {
+    color: #fff;
+    text-decoration: none;
+   }
+   
+   main {
+    margin: 20px;
+   }
+   
+   section {
+    margin-bottom: 20px;
+   }
+   
+   label {
+    display: block;
+    margin-bottom: 5px;
+   }
+   
+   input[type="text"],
+   input[type="email"],
+   input[type="password"],
+   input[type="date"] {
+    padding: 5px;
+    width: 100%;
+   }
+   
+   button {
+    background-color: #005e6b;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+   }
+   
+   button:hover {
+    background-color: #4da8b0;
+   }
+   
+   footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+   }
+   
+   /* Specific styles */
+   
+   .register label,
+   .search label {
+    width: 20%;
+   }
+   
+   .register input[type="text"],
+   .register input[type="email"],
+   .register input[type="password"] {
+    width: 70%;
+   }
+   
+   .search input[type="text"],
+   .search input[type="date"] {
+    width: 25%;
+   }
