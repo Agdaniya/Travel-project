@@ -1,33 +1,40 @@
 <?php
-// Retrieve form data
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$email = $_POST['email'];
-$dateofbirth = $_POST['dateofbirth'];
-$password = $_POST['password'];
+    ini_set("display_errors", "1");
+    ini_set("display_startup_errors", "1");
+    error_reporting(E_ALL);
 
-// Connect to the database
-$servername = "localhost"; 
-$username = "sqluser"; 
-$password = "password";
-$dbname = "travel"; 
 
-$conn = new mysqli($localhost, $sqluser, $password, $travel);
+    $servername="localhost";
+    $username="root";
+    $password="";
+    $database_name="travel";
 
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    //Database connection
+    $conn = mysqli_connect($servername,$username,$password,$database_name);
+    if(!$conn){
+        die("Connection_failed" . mysqli_connect_error());
+    }
+    if(isset($_POST['save']))
+    {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $dateofbirth=$_POST['dateofbirth'];
+        $password = $_POST['password'];
+        
+        $sql_query = "INSERT INTO userprofile(firstname,lastname,username,email,dateofbirth,password)
+        VALUES('$firstname','$lastname','$username','$email','$dateofbirth','$password)";
 
-// Insert the form data into the database
-$sql = "INSERT INTO userprofile (firstname,lastname,email,dateofbirth,password) VALUES ('$firstname','$lastname' ,'$email','$dateofbirth','$password')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Data inserted successfully!";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-// Close the database connection
-$conn->close();
-?>
+        if(mysqli_query($conn,$sql_query))
+        {
+            echo "new details added";
+        }
+        else
+        {
+            echo "error" . $sql . "" . mysqli_error($conn);
+        }
+        mysqli_close($conn);
+        
+    }
+    ?>
